@@ -9,3 +9,7 @@
 
 ### Langkah 4: Implementasi title row
   ![title_row](images/03.png)
+
+## Praktikum 2: Implementasi button row
+### Langkah 1: Buat method Column _buildButtonColumn
+  ![button_row](images/04.png)
