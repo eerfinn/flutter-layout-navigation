@@ -33,3 +33,6 @@
 
 ### Langkah 2: Tambahkan gambar ke body
   ![image_section](images/10.png)
+
+### Langkah 3: Ubah menjadi ListView
+  ![list_view](images/11.gif)
