@@ -48,6 +48,16 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Panderman, located in Kota Batu, Jawa Timur, Indonesia, stands at 2,045 meters above sea level, part of the DAS Brantas watershed. Its peak, Basundara, is accessible via the easiest route starting from Latar Ombo, taking about three hours for a round trip. The journey from Malang to the starting point involves a 45-minute drive to Batu, followed by a 90-minute drive to Latar Ombo, and another 90 minutes to the summit.\n\n'
+        'Nestled close to settlements and not as high as surrounding mountains, Gunung Panderman offers stunning natural beauty, making it ideal for beginners. Its manageable height and proximity to urban areas provide a perfect setting for a serene escape, reflecting its Javanese name "Panderman," meaning "sekadar" or just enough for personal reflection and light adventure.\n\n'
+        'Oleh: Erfin Jauhari Dwi Brian 2341760088.',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Erfin Jauhari Dwi Brian 2341760088',
       home: Scaffold(
