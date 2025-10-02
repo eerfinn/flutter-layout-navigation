@@ -21,52 +21,50 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
                     'Wisata Gunung di Batu',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
                   'Batu, Malang, Indonesia',
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
+                  style: TextStyle(color: Colors.grey[500]),
                 ),
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
     );
 
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Erfin Jauhari Dwi Brian 2341760088',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Layout Demo'),
-        ),
-        body: Column(
-          children: [
-            titleSection
-          ],
-        ),
+        appBar: AppBar(title: const Text('Flutter Layout Demo')),
+        body: Column(children: [titleSection]),
       ),
     );
   }
 
-Column _buildButtonColumn(Color color, IconData icon, String label) {
+  Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
-      mainAxisSize: MainAxisSize.min,              // ukuran column pas isi
+      mainAxisSize: MainAxisSize.min, // ukuran column pas isi
       mainAxisAlignment: MainAxisAlignment.center, // ikon + teks di tengah
       children: [
         Icon(icon, color: color),
         Container(
-          margin: const EdgeInsets.only(top: 8),   // jarak atas teks
+          margin: const EdgeInsets.only(top: 8), // jarak atas teks
           child: Text(
             label,
             style: TextStyle(

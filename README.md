@@ -13,3 +13,6 @@
 ## Praktikum 2: Implementasi button row
 ### Langkah 1: Buat method Column _buildButtonColumn
   ![button_row](images/04.png)
+
+### Langkah 2: Buat widget buttonSection
+  ![button_section](images/05.png)
