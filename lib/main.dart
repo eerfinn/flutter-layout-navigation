@@ -51,8 +51,10 @@ class MyApp extends StatelessWidget {
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
-        'Gunung Panderman, located in Kota Batu, Jawa Timur, Indonesia, stands at 2,045 meters above sea level, part of the DAS Brantas watershed. Its peak, Basundara, is accessible via the easiest route starting from Latar Ombo, taking about three hours for a round trip. The journey from Malang to the starting point involves a 45-minute drive to Batu, followed by a 90-minute drive to Latar Ombo, and another 90 minutes to the summit.\n\n'
-        'Nestled close to settlements and not as high as surrounding mountains, Gunung Panderman offers stunning natural beauty, making it ideal for beginners. Its manageable height and proximity to urban areas provide a perfect setting for a serene escape, reflecting its Javanese name "Panderman," meaning "sekadar" or just enough for personal reflection and light adventure.\n\n'
+        'Gunung Panderman adalah sebuah gunung di Kota Batu, Jawa Timur, Indonesia, dengan puncak Basundara yang berketinggian 2.045 mdpl. Nama Panderman berasal dari kata "Dermo" dalam bahasa Jawa yang berarti \'sekadar\', karena gunung ini digunakan untuk menyepi sejenak dan merenungi diri.\n\n'
+        'Diperlukan waktu sekitar tiga jam untuk mendaki dan menuruni gunung ini. Rute termudah dimulai dari Latar Ombo. Perjalanan dari Malang ke Batu sekitar 45 menit, kemudian dari Batu ke Latar Ombo 90 menit, dan pendakian ke puncak 90 menit.\n\n'
+        'Gunung ini dekat dengan permukiman dan tidak terlalu tinggi, sehingga ideal untuk pendaki pemula. Dari puncak, Anda dapat menikmati pemandangan Kota Batu, Gunung Arjuno, Gunung Welirang, dan Gunung Banyak.\n\n'
+        'Jalur pendakian: Mulai dari Basecamp Toyomerto di Desa Pesanggrahan, lalu ke Latar Ombo, Pos Watu Gede, dan akhirnya Puncak Basundara.\n\n'
         'Oleh: Erfin Jauhari Dwi Brian 2341760088.',
         softWrap: true,
       ),
@@ -62,7 +64,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Erfin Jauhari Dwi Brian 2341760088',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter Layout Demo')),
-        body: Column(children: [titleSection, buttonSection]),
+        body: Column(children: [titleSection, buttonSection, textSection]),
       ),
     );
   }

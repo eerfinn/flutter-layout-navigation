@@ -23,3 +23,6 @@
 ## Praktikum 3: Implementasi text section
 ### Langkah 1: Buat widget textSection
   ![text_section](images/07.png)
+  
+### Langkah 2: Tambah variabel text section ke body
+  ![body](images/08.png)
