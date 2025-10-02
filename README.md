@@ -16,3 +16,6 @@
 
 ### Langkah 2: Buat widget buttonSection
   ![button_section](images/05.png)
+
+### Langkah 3: Tambah button section ke body
+  ![body](images/06.png)

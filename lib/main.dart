@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Erfin Jauhari Dwi Brian 2341760088',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter Layout Demo')),
-        body: Column(children: [titleSection]),
+        body: Column(children: [titleSection, buttonSection]),
       ),
     );
   }
