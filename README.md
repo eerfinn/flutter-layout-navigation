@@ -5,4 +5,7 @@
   ![new_flutter](images/01.png)
 
 ### Langkah 2: Buka & Edit file lib/main.dart
-  ![new_flutter](images/02.png)
+  ![open_file](images/02.png)
+
+### Langkah 4: Implementasi title row
+  ![title_row](images/03.png)
