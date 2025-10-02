@@ -30,3 +30,6 @@
 ## Praktikum 4: Implementasi image section
 ### Langkah 1: Siapkan aset gambar
   ![image_section](images/09.png)
+
+### Langkah 2: Tambahkan gambar ke body
+  ![image_section](images/10.png)
