@@ -26,3 +26,7 @@
   
 ### Langkah 2: Tambah variabel text section ke body
   ![body](images/08.png)
+
+## Praktikum 4: Implementasi image section
+### Langkah 1: Siapkan aset gambar
+  ![image_section](images/09.png)
