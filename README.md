@@ -43,7 +43,5 @@
   ![navigator](images/14.png)
 ### Langkah 4: Membuat data model
   ![data_model](images/15.png)
-### Langkah 5: Lengkapi kode di class HomePage/Membuat HomePage
+### Langkah 5: Lengkapi kode di class HomePage/Definisi Model
   ![home_page](images/16.png)
-### Langkah 6: Membuat ListView dan itemBuilder
-  ![list_view](images/17.png)
