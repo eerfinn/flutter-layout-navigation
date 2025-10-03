@@ -44,3 +44,6 @@
 ## Praktikum 5: Membangun Navigasi di Flutter
 ### Langkah 1: Siapkan project baru
   ![new_project](images/12.png)
+
+### Langkah 2: Mendefinisikan Route
+  ![route](images/13.png)
