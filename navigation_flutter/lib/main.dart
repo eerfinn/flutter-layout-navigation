@@ -14,13 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Belanja - Navigation Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-      ),
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/item': (context) => const ItemPage(),
+        '/item': (context) => ItemPage(),
       },
     );
   }
