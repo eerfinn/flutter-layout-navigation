@@ -54,3 +54,5 @@
 ## Tugas Praktikum 2
 ### 1. Menambahkan informasi arguments pada penggunaan Navigator
   ![arguments](images/19.png)
+### 2. Menerima dan menampilkan data yang dikirim dari HomePage
+  ![show_item](images/20.png)
