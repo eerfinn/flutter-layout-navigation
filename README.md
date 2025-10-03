@@ -41,3 +41,5 @@
   ![route](images/13.png)
 ### Langkah 3: Menggunakan Navigator/Mendefinisikan Route 
   ![navigator](images/14.png)
+### Langkah 4: Membuat data model
+  ![data_model](images/15.png)
