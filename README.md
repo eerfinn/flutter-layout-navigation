@@ -45,3 +45,5 @@
   ![data_model](images/15.png)
 ### Langkah 5: Lengkapi kode di class HomePage/Definisi Model
   ![home_page](images/16.png)
+### Langkah 6: Membuat ListView dan itemBuilder
+  ![Listview_itembuilder](images/17.png)
