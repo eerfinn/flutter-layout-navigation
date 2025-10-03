@@ -49,3 +49,8 @@
   ![Listview_itembuilder](images/17.png)
 ### Langkah 7: Menambahkan aksi pada ListView
   ![action_listview](images/18.png)
+
+
+## Tugas Praktikum 2
+### 1. Menambahkan informasi arguments pada penggunaan Navigator
+  ![arguments](images/19.png)
