@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:navigation_flutter/models/item.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key, required String title});
+  HomePage({super.key});
+  
+  final List<Item> items = [
+    Item(name: 'Sugar', price: 5000),
+    Item(name: 'Salt', price: 2000),
+  ];
 
   @override
   Widget build(BuildContext context) {

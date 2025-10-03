@@ -43,3 +43,5 @@
   ![navigator](images/14.png)
 ### Langkah 4: Membuat data model
   ![data_model](images/15.png)
+### Langkah 5: Lengkapi kode di class HomePage/Membuat HomePage
+  ![home_page](images/16.png)
