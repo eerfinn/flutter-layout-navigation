@@ -56,3 +56,5 @@
   ![arguments](images/19.png)
 ### 2. Menerima dan menampilkan data yang dikirim dari HomePage
   ![show_item](images/20.png)
+### 3. Menambahkan atribut foto produk, stok, dan rating & Ubah tampilan menjadi GridView
+  ![grid_view](images/21.gif)

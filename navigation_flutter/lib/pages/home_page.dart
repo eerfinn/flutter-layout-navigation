@@ -3,10 +3,22 @@ import 'package:navigation_flutter/models/item.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  
+
   final List<Item> items = [
-    Item(name: 'Sugar', price: 5000),
-    Item(name: 'Salt', price: 2000),
+    Item(
+      name: 'Sugar',
+      price: 5000,
+      image: 'images/sugar.jpg',
+      stock: 10,
+      rating: 4.5,
+    ),
+    Item(
+      name: 'Salt',
+      price: 2000,
+      image: 'images/salt.jpg',
+      stock: 20,
+      rating: 4.0,
+    ),
   ];
 
   @override
@@ -15,11 +27,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Shopping List', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
+        elevation: 0,
       ),
       body: Container(
-        margin: EdgeInsets.all(8),
-        child: ListView.builder(
-          padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.7,
+          ),
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
@@ -28,19 +46,90 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/item', arguments: item);
               },
               child: Card(
-                child: Container(
-                  margin: EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      Expanded(child: Text(item.name)),
-                      Expanded(
-                        child: Text(
-                          item.price.toString(),
-                          textAlign: TextAlign.end,
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Gambar Produk
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(12),
+                          ),
+                          image: DecorationImage(
+                            image: NetworkImage(item.image),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    // Detail Produk
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Nama Produk
+                            Text(
+                              item.name,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            // Harga
+                            Text(
+                              'Rp ${item.price}',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            // Rating dan Stok
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                // Rating
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.star,
+                                      size: 16,
+                                      color: Colors.amber,
+                                    ),
+                                    SizedBox(width: 4),
+                                    Text(
+                                      item.rating.toString(),
+                                      style: TextStyle(fontSize: 12),
+                                    ),
+                                  ],
+                                ),
+                                // Stok
+                                Text(
+                                  'Stock: ${item.stock}',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.grey[600],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             );
