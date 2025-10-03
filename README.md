@@ -47,3 +47,5 @@
   ![home_page](images/16.png)
 ### Langkah 6: Membuat ListView dan itemBuilder
   ![Listview_itembuilder](images/17.png)
+### Langkah 7: Menambahkan aksi pada ListView
+  ![action_listview](images/18.png)
