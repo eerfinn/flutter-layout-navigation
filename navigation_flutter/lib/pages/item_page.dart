@@ -12,11 +12,12 @@ import 'package:navigation_flutter/widgets/footer_widget.dart';
 /// Halaman detail produk
 /// Menampilkan informasi lengkap produk termasuk gambar, nama, harga, stock, dan deskripsi
 class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+  final Item item;
+
+  const ItemPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final item = ModalRoute.of(context)!.settings.arguments as Item;
 
     return Scaffold(
       appBar: _buildAppBar(),

@@ -62,3 +62,5 @@
   ![hero_widget](images/22.gif)
 ### 5. Modifikasi Tampilan
   ![modifikasi](images/23.gif)
+### 6. Modifikasi menggunakan plugin go_router
+  ![go_router](images/24.png)

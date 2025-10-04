@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:navigation_flutter/models/item.dart';
 import 'package:navigation_flutter/constants/app_constants.dart';
+import 'package:navigation_flutter/utils/app_router.dart';
 import 'package:navigation_flutter/widgets/product_image.dart';
 import 'package:navigation_flutter/widgets/product_name.dart';
 import 'package:navigation_flutter/widgets/product_price.dart';
@@ -15,7 +17,7 @@ class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.item});
 
   void _navigateToDetail(BuildContext context) {
-    Navigator.pushNamed(context, '/item', arguments: item);
+    context.go(AppRouter.itemDetail, extra: item);
   }
 
   @override

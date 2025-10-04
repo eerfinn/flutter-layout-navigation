@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_flutter/pages/home_page.dart';
-import 'package:navigation_flutter/pages/item_page.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:navigation_flutter/utils/app_router.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Shopping App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -36,11 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: Colors.grey[50],
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/item': (context) => const ItemPage(),
-      },
+      routerConfig: AppRouter.router,
     );
   }
 }
