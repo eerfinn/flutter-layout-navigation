@@ -1,143 +1,78 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_flutter/models/item.dart';
+import 'package:navigation_flutter/constants/app_constants.dart';
+import 'package:navigation_flutter/widgets/product_card.dart';
+import 'package:navigation_flutter/widgets/footer_widget.dart';
 
+/// Halaman utama yang menampilkan daftar produk dalam bentuk grid
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
+  /// Daftar produk yang tersedia
   final List<Item> items = [
     Item(
       name: 'Sugar',
       price: 5000,
-      image: 'images/sugar.jpg',
-      stock: 10,
+      image: 'assets/images/sugar.jpg',
+      stock: 50,
       rating: 4.5,
     ),
     Item(
       name: 'Salt',
       price: 2000,
-      image: 'images/salt.jpg',
-      stock: 20,
-      rating: 4.0,
+      image: 'assets/images/salt.jpg',
+      stock: 100,
+      rating: 4.8,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Shopping List', style: TextStyle(color: Colors.white)),
-        backgroundColor: Colors.blue,
-        elevation: 0,
+      appBar: _buildAppBar(),
+      body: Column(
+        children: [
+          Expanded(child: _buildProductGrid()),
+          const FooterWidget(),
+        ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(8),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 0.7,
+    );
+  }
+
+  /// AppBar dengan title Shopping List
+  PreferredSizeWidget _buildAppBar() {
+    return AppBar(
+      title: const Text(
+        'Shopping List',
+        style: AppConstants.appBarTitleStyle,
+      ),
+      backgroundColor: Colors.blue,
+      elevation: 0,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.blue[600]!, Colors.blue[800]!],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/item', arguments: item);
-              },
-              child: Card(
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Gambar Produk dengan Hero Widget
-                    Expanded(
-                      flex: 3,
-                      child: Hero(
-                        tag: 'product-${item.name}',  // ← TAMBAHKAN INI
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(12),
-                            ),
-                            image: DecorationImage(
-                              image: NetworkImage(item.image),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    // Detail Produk
-                    Expanded(
-                      flex: 2,
-                      child: Padding(
-                        padding: EdgeInsets.all(8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // Nama Produk
-                            Text(
-                              item.name,
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                            // Harga
-                            Text(
-                              'Rp ${item.price}',
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            // Rating dan Stok
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                // Rating
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      size: 16,
-                                      color: Colors.amber,
-                                    ),
-                                    SizedBox(width: 4),
-                                    Text(
-                                      item.rating.toString(),
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                  ],
-                                ),
-                                // Stok
-                                Text(
-                                  'Stock: ${item.stock}',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: Colors.grey[600],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
         ),
+      ),
+    );
+  }
+
+  /// Grid view untuk menampilkan produk
+  Widget _buildProductGrid() {
+    return Container(
+      padding: const EdgeInsets.all(AppConstants.paddingMedium),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: AppConstants.gridCrossAxisCount,
+          crossAxisSpacing: AppConstants.gridCrossAxisSpacing,
+          mainAxisSpacing: AppConstants.gridMainAxisSpacing,
+          childAspectRatio: AppConstants.gridChildAspectRatio,
+        ),
+        itemCount: items.length,
+        itemBuilder: (context, index) => ProductCard(item: items[index]),
       ),
     );
   }

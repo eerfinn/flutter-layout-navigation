@@ -9,15 +9,37 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Belanja - Navigation Demo',
+      title: 'Shopping App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.light,
+        ),
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          centerTitle: false,
+        ),
+        cardTheme: CardThemeData(
+          elevation: 4,
+          shadowColor: Colors.blue.withValues(alpha: 0.2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        scaffoldBackgroundColor: Colors.grey[50],
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/item': (context) => ItemPage(),
+        '/item': (context) => const ItemPage(),
       },
     );
   }
