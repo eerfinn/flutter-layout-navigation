@@ -58,3 +58,5 @@
   ![show_item](images/20.png)
 ### 3. Menambahkan atribut foto produk, stok, dan rating & Ubah tampilan menjadi GridView
   ![grid_view](images/21.gif)
+### 4. Implementasikan Hero widget
+  ![hero_widget](images/22.gif)]

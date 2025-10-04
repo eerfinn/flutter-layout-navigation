@@ -18,14 +18,17 @@ class ItemPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gambar Produk Besar
-            Container(
-              height: 300,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(itemArgs.image),
-                  fit: BoxFit.cover,
+            // Gambar Produk Besar dengan Hero Widget
+            Hero(
+              tag: 'product-${itemArgs.name}',  // ← TAG HARUS SAMA
+              child: Container(
+                height: 300,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(itemArgs.image),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -153,7 +156,7 @@ class ItemPage extends StatelessWidget {
                   ),
                   SizedBox(height: 24),
                   
-                  // Tombol Add to Cart (opsional)
+                  // Tombol Add to Cart
                   SizedBox(
                     width: double.infinity,
                     height: 50,

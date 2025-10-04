@@ -53,17 +53,20 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Gambar Produk
+                    // Gambar Produk dengan Hero Widget
                     Expanded(
                       flex: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(12),
-                          ),
-                          image: DecorationImage(
-                            image: NetworkImage(item.image),
-                            fit: BoxFit.cover,
+                      child: Hero(
+                        tag: 'product-${item.name}',  // ← TAMBAHKAN INI
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(12),
+                            ),
+                            image: DecorationImage(
+                              image: NetworkImage(item.image),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
