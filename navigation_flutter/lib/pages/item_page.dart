@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:navigation_flutter/models/item.dart';
 import 'package:navigation_flutter/constants/app_constants.dart';
 import 'package:navigation_flutter/widgets/hero_product_image.dart';
@@ -40,7 +41,7 @@ class ItemPage extends StatelessWidget {
     );
   }
 
-  /// AppBar dengan gradient background
+  /// AppBar dengan gradient background dan back button eksplisit
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       title: const Text(
@@ -49,6 +50,13 @@ class ItemPage extends StatelessWidget {
       ),
       backgroundColor: Colors.blue,
       iconTheme: const IconThemeData(color: Colors.white),
+      leading: Builder(
+        builder: (context) => IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => context.go('/'),
+          tooltip: 'Back to Home',
+        ),
+      ),
       elevation: 0,
       flexibleSpace: Container(
         decoration: BoxDecoration(

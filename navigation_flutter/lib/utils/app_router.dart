@@ -9,6 +9,13 @@ class AppRouter {
   static const String home = '/';
   static const String itemDetail = '/item';
 
+  /// Helper method untuk membuat path detail item dengan nama
+  static String itemDetailPath(String itemName) {
+    // Convert item name ke URL-friendly format (lowercase, replace spaces with hyphens)
+    final urlName = itemName.toLowerCase().replaceAll(' ', '-');
+    return '$itemDetail/$urlName';
+  }
+
   /// GoRouter instance untuk navigasi aplikasi
   static final GoRouter router = GoRouter(
     initialLocation: home,
@@ -19,7 +26,7 @@ class AppRouter {
         builder: (context, state) => HomePage(),
       ),
       GoRoute(
-        path: itemDetail,
+        path: '$itemDetail/:name',
         name: 'item',
         builder: (context, state) {
           final item = state.extra as Item;

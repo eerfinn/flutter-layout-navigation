@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:navigation_flutter/constants/app_constants.dart';
 
 /// Widget footer yang ditampilkan di bagian bawah setiap halaman
-/// Menampilkan informasi aplikasi dan developer
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
 

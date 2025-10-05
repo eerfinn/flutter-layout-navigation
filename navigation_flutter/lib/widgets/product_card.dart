@@ -17,7 +17,8 @@ class ProductCard extends StatelessWidget {
   const ProductCard({super.key, required this.item});
 
   void _navigateToDetail(BuildContext context) {
-    context.go(AppRouter.itemDetail, extra: item);
+    // Navigate dengan path parameter untuk nama item
+    context.go(AppRouter.itemDetailPath(item.name), extra: item);
   }
 
   @override
